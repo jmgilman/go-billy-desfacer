@@ -6,7 +6,7 @@
 # Installation
 
 ```
-go get gopkg.in/jfontan/go-billy-desfacer.v0
+go get github.com/jmgilman/go-billy-desfacer
 ```
 
 # Example of use
@@ -18,7 +18,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/afero"
-	"gopkg.in/jfontan/go-billy-desfacer.v0"
+	"github.com/jmgilman/go-billy-desfacer"
 )
 
 func main() {
@@ -54,11 +54,6 @@ func main() {
 	fmt.Println(string(buf[:n]))
 }
 ```
-
-# Notes
-
-* The functions `Symlink` and `Readlink` are not implemented as afero does not have that functionality.
-
 
 # The name
 

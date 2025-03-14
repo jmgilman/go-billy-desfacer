@@ -1,4 +1,4 @@
-module gopkg.in/jfontan/go-billy-desfacer.v0
+module github.com/jmgilman/go-billy-desfacer
 
 go 1.15
 
