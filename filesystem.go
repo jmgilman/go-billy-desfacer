@@ -142,11 +142,19 @@ func (f *FS) Lstat(filename string) (os.FileInfo, error) {
 
 // Symlink implements billy.Symlink interface.
 func (f *FS) Symlink(target string, link string) error {
+	if s, ok := f.a.(afero.Symlinker); ok {
+		return s.SymlinkIfPossible(target, link)
+	}
+
 	return ErrNotImplemented
 }
 
 // Readlink implements billy.Symlink interface.
 func (f *FS) Readlink(link string) (string, error) {
+	if s, ok := f.a.(afero.Symlinker); ok {
+		return s.ReadlinkIfPossible(link)
+	}
+
 	return "", ErrNotImplemented
 }
 
